@@ -1,0 +1,91 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+
+<style>
+  .custom-col {
+    flex-basis: 20%;
+    max-width: 20%;
+    padding: 10px;
+  }
+
+  .custom-card {
+    height: 100%;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .custom-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    flex-grow: 1;
+  }
+</style>
+
+<section class="container-fluid text-center">
+  <h3>Welcome</h3>
+  <div class="row h-100">
+    <div class="col custom-col">
+      <a href="{% url 'notes' %}">
+        <div class="card custom-card">
+          <img class="card-img-top" src="{% static 'images/notes.jpg' %}" alt="Notes image">
+          <div class="card-body">
+            <h5 class="card-title">Notes</h5>
+            Create Notes to refer them later. They are stored permanently until deleted
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col custom-col">
+      <a href="{% url 'homework' %}">
+        <div class="card custom-card">
+          <img class="card-img-top" src="{% static 'images/homework.jpg' %}" alt="Homework image">
+          <div class="card-body">
+            <h5 class="card-title">Homework</h5>
+            Add homeworks and assign them deadlines. They will be displayed prioritized by deadlines
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col custom-col">
+      <a href="{% url 'youtube' %}">
+        <div class="card custom-card">
+          <img class="card-img-top" src="{% static 'images/youtube.jpg' %}" alt="YouTube image">
+          <div class="card-body">
+            <h5 class="card-title">YouTube</h5>
+            Search YouTube and select your desired video to play it on YouTube
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col custom-col">
+      <a href="{% url 'todo' %}">
+        <div class="card custom-card">
+          <img class="card-img-top" src="{% static 'images/todo.jpg' %}" alt="To Do image">
+          <div class="card-body">
+            <h5 class="card-title">To Do</h5>
+            Add your to-do lists for your day and remove them as you finish
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col custom-col">
+      <a href="{% url 'wiki' %}">
+        <div class="card custom-card">
+          <img class="card-img-top" src="{% static 'images/wiki.jpg' %}" alt="Wikipedia image">
+          <div class="card-body">
+            <h5 class="card-title">Wikipedia</h5>
+            Homework and Assignments? Search Wikipedia to get fast results
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}
